@@ -9,4 +9,6 @@ jobs:
       - name: Run Main file
         run: go run .
       - name: Test go file
-        run: go test
+        run: |
+          cd greetings
+          go test
