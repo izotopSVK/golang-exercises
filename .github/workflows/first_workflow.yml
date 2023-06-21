@@ -1,12 +1,12 @@
 name: First Worklow
-on: workflow_dispatch
+on: push
 jobs:
-  first-job:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: |
-          echo "Hello"
-          echo " world!"
-      - name: Print goodbye
-        run: echo "Done! Bye!"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Run Main file
+        run: go run .
+      - name: Test go file
+        run: go test
